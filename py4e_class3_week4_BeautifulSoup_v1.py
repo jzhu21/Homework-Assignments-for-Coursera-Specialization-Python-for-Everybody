@@ -16,10 +16,16 @@ html = urlopen(url, context=ctx).read()
 soup = BeautifulSoup(html, "html.parser")
 
 # Retrieve all of the anchor tags
+numbers = list()
+total = 0
 tags = soup('span')
 for tag in tags:
     # Look at the parts of a tag
-    print('TAG:', tag)
-    print('URL:', tag.get('href', None))
-    print('Contents:', tag.contents[0])
-    print('Attrs:', tag.attrs)
+   # print('TAG:', tag)
+   # print('URL:', tag.get('href', None))
+   # print('Contents:', tag.contents[0])
+   # print('Attrs:', tag.attrs)
+   number = float(tag.contents[0])
+   total = total + number + number
+   
+print(total)
