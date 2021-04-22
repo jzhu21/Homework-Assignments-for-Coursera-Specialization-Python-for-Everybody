@@ -16,7 +16,6 @@ html = urlopen(url, context=ctx).read()
 soup = BeautifulSoup(html, "html.parser")
 
 # Retrieve all of the anchor tags
-numbers = list()
 total = 0
 tags = soup('span')
 for tag in tags:
@@ -26,6 +25,6 @@ for tag in tags:
    # print('Contents:', tag.contents[0])
    # print('Attrs:', tag.attrs)
    number = float(tag.contents[0])
-   total = total + number + number
+   total = total + number
    
 print(total)
