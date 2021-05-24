@@ -16,7 +16,6 @@ tree = ET.fromstring(mystring)
 
 lst = tree.findall('comments/comment')
 
-print(lst)
 
 total = 0
 mycount = 0
